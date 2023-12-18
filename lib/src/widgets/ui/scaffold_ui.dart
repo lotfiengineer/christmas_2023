@@ -1,6 +1,7 @@
+import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:christmas_2024/src/screens/gifts_screen.dart';
 import 'package:christmas_2024/src/screens/home_screen.dart';
-import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
+import 'package:christmas_2024/src/utils/methods/is_home_visible.dart';
 import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -25,21 +26,44 @@ class _ScaffoldUiState extends State<ScaffoldUi> {
   }
 
   Widget _buildAppBarText() {
-    return currentIndex == 0
+    return isHomeVisible(currentIndex)
         ? const Text('Home')
         : const Text('Received Gifts');
   }
 
+  Widget _buildContainerWithBackground({required Widget child}) {
+    String image = isHomeVisible(currentIndex)
+        ? 'christmas_background.png'
+        : 'aurora_sky.jpg';
+
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('lib/assets/images/$image'),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: child,
+    );
+  }
+
+  Color getAppbarBackgroundColor() =>
+      isHomeVisible(currentIndex) ? AppTheme.greenColor : AppTheme.blueColor;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: _buildAppBarText(),
-      ),
-      body: widgetOptions[currentIndex],
-      bottomNavigationBar: BottomNavigationBarUi(
-        currentIndex: currentIndex,
-        onTap: _onItemTapped,
+    return _buildContainerWithBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: getAppbarBackgroundColor(),
+          title: _buildAppBarText(),
+        ),
+        body: widgetOptions[currentIndex],
+        bottomNavigationBar: BottomNavigationBarUi(
+          currentIndex: currentIndex,
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }

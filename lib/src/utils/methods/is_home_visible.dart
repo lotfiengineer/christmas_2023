@@ -1,0 +1,1 @@
+bool isHomeVisible(int index) => index == 0;

@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 abstract class AppTheme {
   static const redColor = Color(0xFFBB2528);
   static const greenColor = Color(0xFF165B33);
-  static const lightGreen =Color.fromARGB(255, 24, 121, 65);
-  static const yellowColor = Color.fromARGB(255, 241, 165, 13);
-  static const blueColor = Color.fromARGB(255, 42, 130, 189);
+  static const lightGreen = Color(0xFF187941);
+  static const yellowColor = Color(0xFFF1A50D);
+  static const blueColor = Color(0xFF2A82BD);
   static const whiteColor = Colors.white;
+
+  static const transparentGreenColor = Color.fromARGB(120, 22, 91, 51);
+  static const transparentBlueColor = Color.fromARGB(120, 42, 130, 189);
 
   static const double extraLargeSize = 34.00;
   static const double largeSize = 26.00;
@@ -17,7 +20,7 @@ abstract class AppTheme {
     return ThemeData(
       useMaterial3: true,
       fontFamily: 'christmas',
-      scaffoldBackgroundColor: whiteColor,
+      scaffoldBackgroundColor: Colors.transparent,
       colorScheme: ColorScheme.fromSeed(
         seedColor: redColor,
         primary: redColor,
@@ -39,19 +42,16 @@ abstract class AppTheme {
         ),
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: greenColor,
         centerTitle: true,
         titleTextStyle: TextStyle(
-          color: yellowColor,
-          fontSize: extraLargeSize,
-          fontFamily: 'christmas',
-          fontWeight: FontWeight.w700
-        ),
+            color: yellowColor,
+            fontSize: extraLargeSize,
+            fontFamily: 'christmas',
+            fontWeight: FontWeight.w700),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: whiteColor,
-        
-      )
+      ),
     );
   }
 }
