@@ -20,9 +20,6 @@ class _BottomNavigationBarUiState extends State<BottomNavigationBarUi> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.shifting,
-      selectedFontSize: 12,
-      iconSize: 16,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: FaIcon(
@@ -36,9 +33,13 @@ class _BottomNavigationBarUiState extends State<BottomNavigationBarUi> {
             FontAwesomeIcons.gift,
           ),
           label: 'Received Gifts',
-          backgroundColor: AppTheme.blueColor,
+          backgroundColor: AppTheme.greenColor,
         ),
       ],
+      type: BottomNavigationBarType.shifting,
+      selectedFontSize: AppTheme.smallSize,
+      iconSize: AppTheme.mediumSize,
+      selectedItemColor: AppTheme.yellowColor,
       currentIndex: widget.currentIndex,
       onTap: widget.onTap,
     );

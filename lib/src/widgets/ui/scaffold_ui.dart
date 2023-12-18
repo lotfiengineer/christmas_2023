@@ -1,3 +1,6 @@
+import 'package:christmas_2024/src/screens/gifts_screen.dart';
+import 'package:christmas_2024/src/screens/home_screen.dart';
+import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
 import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -11,30 +14,32 @@ class ScaffoldUi extends StatefulWidget {
 class _ScaffoldUiState extends State<ScaffoldUi> {
   int currentIndex = 0;
   List<Widget> widgetOptions = <Widget>[
-    const Text(
-      'Home Screen',
-    ),
-    const Text(
-      'gifts screen',
-    ),
+    const HomeScreen(),
+    const GiftsScreen(),
   ];
 
-  void onItemTapped(int index) {
+  void _onItemTapped(int index) {
     setState(() {
       currentIndex = index;
     });
+  }
+
+  Widget _buildAppBarText() {
+    return currentIndex == 0
+        ? const Text('Home')
+        : const Text('Received Gifts');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Christmas 2024 Home Page'),
+        title: _buildAppBarText(),
       ),
       body: widgetOptions[currentIndex],
       bottomNavigationBar: BottomNavigationBarUi(
         currentIndex: currentIndex,
-        onTap: onItemTapped,
+        onTap: _onItemTapped,
       ),
     );
   }

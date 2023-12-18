@@ -1,5 +1,4 @@
 import 'package:christmas_2024/src/config/themes/app_theme.dart';
-import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:christmas_2024/src/widgets/ui/scaffold_ui.dart';
 import 'package:flutter/material.dart';
 
