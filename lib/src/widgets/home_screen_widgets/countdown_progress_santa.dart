@@ -2,6 +2,7 @@ import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:christmas_2024/src/utils/constants/date_values.dart';
 import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
 import 'package:christmas_2024/src/utils/methods/is_progress_finished.dart';
+import 'package:christmas_2024/src/widgets/home_screen_widgets/santa.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -102,10 +103,6 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
     );
   }
 
-  _buildSantaClauseComing() {
-    return const Text('Santa');
-  }
-
   @override
   Widget build(BuildContext context) {
     CrossAxisAlignment santaAlignment = isProgressFinished(progress)
@@ -120,14 +117,14 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
             margin: EdgeInsets.only(
               left: isProgressFinished(progress)
                   ? 0
-                  : constraints.biggest.width * progress,
+                  : (constraints.biggest.width) * progress - 30,
             ),
             child: isProgressFinished(progress)
                 ? _buildMerryChristmasText()
-                : _buildSantaClauseComing(),
+                : const Santa(),
           ),
         ),
-        const SizedBox(height: 3),
+        const SizedBox(height: 7),
         Stack(
           children: [
             ClipRRect(
