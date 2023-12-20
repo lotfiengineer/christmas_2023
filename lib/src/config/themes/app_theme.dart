@@ -5,8 +5,10 @@ abstract class AppTheme {
   static const greenColor = Color(0xFF165B33);
   static const lightGreen = Color(0xFF187941);
   static const yellowColor = Color(0xFFF1A50D);
+  static const lightYelllow = Color.fromARGB(255, 247, 193, 85);
   static const blueColor = Color(0xFF2A82BD);
   static const whiteColor = Colors.white;
+  static const lightWhiteColor = Color.fromARGB(226, 255, 255, 255);
 
   static const transparentGreenColor = Color.fromARGB(120, 22, 91, 51);
   static const transparentBlueColor = Color.fromARGB(120, 42, 130, 189);
@@ -30,15 +32,19 @@ abstract class AppTheme {
       textTheme: const TextTheme(
         displayMedium: TextStyle(
           fontSize: extraLargeSize,
+          color: lightWhiteColor,
         ),
         titleMedium: TextStyle(
           fontSize: largeSize,
+          color: lightWhiteColor,
         ),
         bodyMedium: TextStyle(
           fontSize: mediumSize,
+          color: lightWhiteColor,
         ),
         bodySmall: TextStyle(
           fontSize: smallSize,
+          color: lightWhiteColor,
         ),
       ),
       appBarTheme: const AppBarTheme(

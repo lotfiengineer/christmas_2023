@@ -41,6 +41,7 @@ class _ScaffoldUiState extends State<ScaffoldUi> {
         image: DecorationImage(
           image: AssetImage('lib/assets/images/$image'),
           fit: BoxFit.fill,
+          opacity: 0.6
         ),
       ),
       child: child,
