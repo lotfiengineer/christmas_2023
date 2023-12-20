@@ -38,7 +38,7 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
     } else {
       controller = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 10),
+        duration: const Duration(seconds: 14),
         upperBound: progress,
       )..addListener(() {
           updateProgress();
@@ -117,11 +117,13 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
             margin: EdgeInsets.only(
               left: isProgressFinished(progress)
                   ? 0
-                  : (constraints.biggest.width) * progress - 30,
+                  : (constraints.biggest.width) * progress - 50,
             ),
-            child: isProgressFinished(progress)
-                ? _buildMerryChristmasText()
-                : const Santa(),
+            child: ClipRRect(
+              child: isProgressFinished(progress)
+                  ? _buildMerryChristmasText()
+                  : const Santa(),
+            ),
           ),
         ),
         const SizedBox(height: 7),

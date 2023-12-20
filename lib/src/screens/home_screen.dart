@@ -1,6 +1,7 @@
 import 'package:christmas_2024/src/utils/constants/date_values.dart';
 import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
 import 'package:christmas_2024/src/widgets/home_screen_widgets/countdown_progress_santa.dart';
+import 'package:christmas_2024/src/widgets/home_screen_widgets/snowfall/snowfall.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,15 +54,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Column(
-        children: [
-          const SizedBox(height: 30),
-          const CountdownProgressSanta(),
-          const SizedBox(height: 4),
-          _buildDateText(),
-        ],
+    return Snowfall(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            const SizedBox(height: 40),
+            const CountdownProgressSanta(),
+            const SizedBox(height: 4),
+            _buildDateText(),
+          ],
+        ),
       ),
     );
   }

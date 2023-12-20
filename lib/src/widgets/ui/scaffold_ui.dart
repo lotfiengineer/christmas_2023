@@ -2,6 +2,7 @@ import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:christmas_2024/src/screens/gifts_screen.dart';
 import 'package:christmas_2024/src/screens/home_screen.dart';
 import 'package:christmas_2024/src/utils/methods/is_home_visible.dart';
+import 'package:christmas_2024/src/widgets/home_screen_widgets/snowfall/snowfall.dart';
 import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -39,10 +40,9 @@ class _ScaffoldUiState extends State<ScaffoldUi> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('lib/assets/images/$image'),
-          fit: BoxFit.fill,
-          opacity: 0.6
-        ),
+            image: AssetImage('lib/assets/images/$image'),
+            fit: BoxFit.fill,
+            opacity: 0.6),
       ),
       child: child,
     );
