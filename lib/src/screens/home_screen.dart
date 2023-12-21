@@ -63,9 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Column(
           children: [
-            const SizedBox(height: 60),
+            const SizedBox(height: 20),
             const CountdownProgressSanta(),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             _buildDateText(),
             const Spacer(),
             const GivingGift(),

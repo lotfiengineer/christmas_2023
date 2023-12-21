@@ -9,29 +9,29 @@ class GiftsViewmodel extends ChangeNotifier {
 
   final List<GiftModel> allGifts = [
     GiftModel(
-      giftTitle: 'Iphone 14',
-      giftDescription: "1",
-      giftImageSrc: '1',
-    ),
-    GiftModel(
-      giftTitle: '100\$ Gift Card',
-      giftDescription: "2",
-      giftImageSrc: '2',
-    ),
-    GiftModel(
-      giftTitle: 'Harry Potter Books',
-      giftDescription: '3',
-      giftImageSrc: '3',
-    ),
-    GiftModel(
       giftTitle: 'A Box Of Chocolate',
-      giftDescription: '4',
-      giftImageSrc: '4',
+      giftDescription: "Box Of Chocolate",
+      giftImageSrc: 'lib/assets/images/gift_images/box_of_chocolate.jpg',
     ),
     GiftModel(
-      giftTitle: 'A Christmas T-shirt',
-      giftDescription: '5',
-      giftImageSrc: '5',
+      giftTitle: 'Earphone',
+      giftDescription: "An Earphone",
+      giftImageSrc: 'lib/assets/images/gift_images/earphone.png',
+    ),
+    GiftModel(
+      giftTitle: 'Iphone',
+      giftDescription: 'An Iphone',
+      giftImageSrc: 'lib/assets/images/gift_images/iphone.png',
+    ),
+    GiftModel(
+      giftTitle: 'A Mug',
+      giftDescription: 'A Mug',
+      giftImageSrc: 'lib/assets/images/gift_images/mug.png',
+    ),
+    GiftModel(
+      giftTitle: 'A Watch',
+      giftDescription: 'Watch',
+      giftImageSrc: 'lib/assets/images/gift_images/watch.png',
     ),
   ];
 

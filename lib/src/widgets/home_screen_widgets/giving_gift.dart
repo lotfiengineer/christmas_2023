@@ -39,12 +39,28 @@ class _GivingGiftState extends State<GivingGift> {
                   return true;
                 },
                 child: AlertDialog(
+                  contentPadding: EdgeInsets.zero,
+                  actionsPadding: const EdgeInsets.all(7),
+                  titlePadding: const EdgeInsets.only(
+                    bottom: 10,
+                    top: 20,
+                    left: 20,
+                    right: 20,
+                  ),
                   alignment: Alignment.center,
                   actionsAlignment: MainAxisAlignment.center,
-                  title: Text(gift.giftTitle),
+                  title: Image.asset(
+                    gift.giftImageSrc,
+                    // width: 100,
+                    height: 180,
+                  ),
                   content: Text(
                     gift.giftDescription,
                     textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: context.textTheme.titleMedium!.fontSize,
+                      fontWeight: FontWeight.w700
+                    ),
                   ),
                   actions: <Widget>[
                     TextButton(
@@ -71,7 +87,6 @@ class _GivingGiftState extends State<GivingGift> {
       child: isDialogOpen ? _buildOpenBox() : const ClosedBox(),
     );
   }
-
 
   Widget _buildOpenBox() {
     return Padding(
