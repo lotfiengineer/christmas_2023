@@ -1,7 +1,7 @@
 import 'package:christmas_2024/src/gifts_viewmodel.dart';
 import 'package:christmas_2024/src/utils/resources/GiftModel.dart';
+import 'package:christmas_2024/src/widgets/gifts_screen_widgets/received_gift_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
 class GiftsScreen extends StatefulWidget {
@@ -27,18 +27,10 @@ class _GiftsScreenState extends State<GiftsScreen> {
         crossAxisSpacing: 15,
         mainAxisSpacing: 15,
         children: [
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
-          _buildGiftContainer('dasf'),
+          const ReceivedGiftContainer(),
+          const ReceivedGiftContainer(),
+          const ReceivedGiftContainer(),
+          const ReceivedGiftContainer(),
         ],
       ),
     );
