@@ -28,6 +28,7 @@ class _BottomNavigationBarUiState extends State<BottomNavigationBarUi> {
           topRight: Radius.circular(30),
         ),
         child: BottomNavigationBar(
+          unselectedItemColor: AppTheme.superLightWhiteColor,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: FaIcon(

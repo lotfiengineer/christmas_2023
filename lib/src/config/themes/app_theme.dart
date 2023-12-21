@@ -4,11 +4,13 @@ abstract class AppTheme {
   static const redColor = Color(0xFFBB2528);
   static const greenColor = Color(0xFF165B33);
   static const lightGreen = Color(0xFF187941);
+  static const superLightGreen = Color.fromARGB(162, 24, 154, 78);
   static const yellowColor = Color(0xFFF1A50D);
   static const lightYelllow = Color.fromARGB(255, 247, 193, 85);
   static const blueColor = Color(0xFF2A82BD);
   static const whiteColor = Colors.white;
   static const lightWhiteColor = Color.fromARGB(226, 255, 255, 255);
+  static const superLightWhiteColor = Color.fromARGB(184, 255, 255, 255);
 
   static const transparentGreenColor = Color.fromARGB(120, 22, 91, 51);
   static const transparentBlueColor = Color.fromARGB(120, 42, 130, 189);
@@ -55,11 +57,11 @@ abstract class AppTheme {
             fontFamily: 'christmas',
             fontWeight: FontWeight.w700),
       ),
-      textButtonTheme: TextButtonThemeData(
+      textButtonTheme: const TextButtonThemeData(
         style: ButtonStyle(
         )
       ),
-      dialogBackgroundColor: lightGreen,
+      dialogBackgroundColor: superLightGreen,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: whiteColor,
       ),

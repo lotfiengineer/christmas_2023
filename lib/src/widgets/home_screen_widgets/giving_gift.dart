@@ -1,6 +1,9 @@
 import 'package:christmas_2024/src/config/themes/app_theme.dart';
+import 'package:christmas_2024/src/gifts_viewmodel.dart';
 import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
+import 'package:christmas_2024/src/utils/resources/GiftModel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GivingGift extends StatefulWidget {
   const GivingGift({super.key});
@@ -11,17 +14,21 @@ class GivingGift extends StatefulWidget {
 
 class _GivingGiftState extends State<GivingGift> {
   Widget _buildContent() {
+    GiftsViewmodel giftsViewmodel =
+        Provider.of<GiftsViewmodel>(context, listen: false);
     return GestureDetector(
       onTap: () {
+        GiftModel gift = giftsViewmodel.giveRandomGift();
+
         showDialog(
             context: context,
             builder: (BuildContext ctx) {
               return AlertDialog(
                 alignment: Alignment.center,
                 actionsAlignment: MainAxisAlignment.center,
-                title: const Text('icon'),
-                content: const Text(
-                  'description',
+                title: Text(gift.giftTitle),
+                content: Text(
+                  gift.giftDescription,
                   textAlign: TextAlign.center,
                 ),
                 actions: <Widget>[

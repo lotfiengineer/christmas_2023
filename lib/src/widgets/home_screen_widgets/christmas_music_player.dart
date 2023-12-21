@@ -23,6 +23,7 @@ class _ChristmasMusicPlayerState extends State<ChristmasMusicPlayer> {
     player.setVolume(0.2);
     player.onPlayerStateChanged.listen((event) {
       if (event == PlayerState.completed) {
+        player.stop();
         setState(() {
           isPlaying = false;
         });
@@ -34,6 +35,7 @@ class _ChristmasMusicPlayerState extends State<ChristmasMusicPlayer> {
 
   @override
   void dispose() {
+    player.stop();
     super.dispose();
   }
 
