@@ -22,7 +22,7 @@ class _SantaState extends State<Santa> {
           child: Image.asset(
             'lib/assets/images/santa.png',
             color: AppTheme.lightWhiteColor,
-            width: 165,
+            width: 185,
           ),
         ),
       ],

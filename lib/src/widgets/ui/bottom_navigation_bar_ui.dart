@@ -21,7 +21,7 @@ class _BottomNavigationBarUiState extends State<BottomNavigationBarUi> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 48,
       child: ClipRRect(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
