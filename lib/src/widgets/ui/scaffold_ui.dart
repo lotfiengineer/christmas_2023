@@ -16,8 +16,8 @@ class ScaffoldUi extends StatefulWidget {
 }
 
 class _ScaffoldUiState extends State<ScaffoldUi> {
-  // TODO: change this shit
-  int currentIndex = 1;
+  // TODO: change this index
+  int currentIndex = 0;
   List<Widget> widgetOptions = <Widget>[
     const HomeScreen(),
     const GiftsScreen(),
