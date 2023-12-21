@@ -55,6 +55,11 @@ abstract class AppTheme {
             fontFamily: 'christmas',
             fontWeight: FontWeight.w700),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+        )
+      ),
+      dialogBackgroundColor: lightGreen,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: whiteColor,
       ),

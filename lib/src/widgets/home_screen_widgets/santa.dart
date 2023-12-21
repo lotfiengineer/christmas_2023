@@ -15,14 +15,14 @@ class _SantaState extends State<Santa> {
       children: [
         const MovingLinesWidget(),
         const SizedBox(
-          width: 5,
+          width: 1,
         ),
         Transform.flip(
           flipX: true,
           child: Image.asset(
             'lib/assets/images/santa.png',
             color: AppTheme.lightWhiteColor,
-            width: 100,
+            width: 165,
           ),
         ),
       ],
@@ -50,13 +50,15 @@ class _MovingLinesWidgetState extends State<MovingLinesWidget>
     )..repeat();
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: CustomPaint(
         painter: MovingLinesPainter(_controller),
-        size: const Size(25, 1),
+        size: const Size(18, 1),
       ),
     );
   }
@@ -86,23 +88,23 @@ class MovingLinesPainter extends CustomPainter {
 
     double line1X = size.width - size.width * animation.value + 5;
     double line2X = size.width - size.width * (animation.value - 0.33) + 4;
-    double line3X = size.width - size.width * (animation.value - 0.55) - 6;
+    double line3X = size.width - size.width * (animation.value - 0.55) - 4;
 
     canvas.drawLine(
-      Offset(line2X, yOffset + lineHeight + lineGap - 3),
-      Offset(line2X, yOffset + 2 * lineHeight + lineGap - 3),
+      Offset(line2X, yOffset + lineHeight + lineGap - 1),
+      Offset(line2X, yOffset + 2 * lineHeight + lineGap - 1),
       paint,
     );
 
     canvas.drawLine(
-      Offset(line1X, yOffset + 5),
-      Offset(line1X, yOffset + lineHeight + 5),
+      Offset(line1X, yOffset + 7),
+      Offset(line1X, yOffset + lineHeight + 7),
       paint,
     );
 
     canvas.drawLine(
-      Offset(line3X, yOffset + lineHeight + lineGap + 4),
-      Offset(line3X, yOffset + 2 * lineHeight + lineGap + 4),
+      Offset(line3X, yOffset + lineHeight + lineGap + 6),
+      Offset(line3X, yOffset + 2 * lineHeight + lineGap + 6),
       paint,
     );
   }

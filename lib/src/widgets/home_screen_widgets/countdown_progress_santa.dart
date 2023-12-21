@@ -18,6 +18,7 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
   late AnimationController controller;
 
   DateTime today = DateTime.now();
+  
   late double progress;
 
   @override
@@ -117,7 +118,7 @@ class _CountdownProgressSantaState extends State<CountdownProgressSanta>
             margin: EdgeInsets.only(
               left: isProgressFinished(progress)
                   ? 0
-                  : (constraints.biggest.width) * progress - 50,
+                  : (constraints.biggest.width / 1.7) * progress,
             ),
             child: ClipRRect(
               child: isProgressFinished(progress)

@@ -1,6 +1,7 @@
 import 'package:christmas_2024/src/utils/constants/date_values.dart';
 import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
 import 'package:christmas_2024/src/widgets/home_screen_widgets/countdown_progress_santa.dart';
+import 'package:christmas_2024/src/widgets/home_screen_widgets/giving_gift.dart';
 import 'package:christmas_2024/src/widgets/home_screen_widgets/snowfall/snowfall.dart';
 import 'package:flutter/material.dart';
 
@@ -56,13 +57,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Snowfall(
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 12.0,
+          vertical: 5,
+        ),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
             const CountdownProgressSanta(),
             const SizedBox(height: 4),
             _buildDateText(),
+            const Spacer(),
+            const GivingGift(),
           ],
         ),
       ),

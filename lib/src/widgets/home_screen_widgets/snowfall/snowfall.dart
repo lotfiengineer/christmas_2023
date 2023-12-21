@@ -1,3 +1,4 @@
+import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import './widget/snow_widget.dart';
 
@@ -15,7 +16,7 @@ class Snowfall extends StatelessWidget {
           totalSnow: 60,
           speed: 0.1,
           maxRadius: 5,
-          snowColor: Colors.white,
+          snowColor: Color.fromARGB(106, 255, 255, 255),
         ),
         child
       ],
