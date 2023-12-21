@@ -1,12 +1,10 @@
 import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:christmas_2024/src/screens/gifts_screen.dart';
 import 'package:christmas_2024/src/screens/home_screen.dart';
-import 'package:christmas_2024/src/gifts_viewmodel.dart';
 import 'package:christmas_2024/src/utils/methods/is_home_visible.dart';
 import 'package:christmas_2024/src/widgets/home_screen_widgets/christmas_music_player.dart';
 import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ScaffoldUi extends StatefulWidget {
   const ScaffoldUi({super.key});

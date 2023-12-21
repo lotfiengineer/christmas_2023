@@ -16,37 +16,21 @@ class _GiftsScreenState extends State<GiftsScreen> {
     GiftsViewmodel giftsViewmodel =
         Provider.of<GiftsViewmodel>(context, listen: true);
 
-    List<Widget> sadf = (giftsViewmodel.receivedGifts
-        .map((gift) => Text(gift.giftTitle))).toList();
+    List<Widget> giftsList =
+        (giftsViewmodel.receivedGifts.map((gift) => ReceivedGiftContainer(
+              gift: gift,
+            ))).toList();
 
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: GridView.count(
         scrollDirection: Axis.vertical,
         crossAxisCount: 3,
-        crossAxisSpacing: 15,
-        mainAxisSpacing: 15,
-        children: [
-          const ReceivedGiftContainer(),
-          const ReceivedGiftContainer(),
-          const ReceivedGiftContainer(),
-          const ReceivedGiftContainer(),
-        ],
+        crossAxisSpacing: 28,
+        mainAxisSpacing: 28,
+        // children: giftsList,
+        children: giftsList,
       ),
-    );
-
-    // return Wrap(
-    //   children: sadf,
-    // );
-  }
-
-  Widget _buildGiftContainer(String tt) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Text(tt),
     );
   }
 

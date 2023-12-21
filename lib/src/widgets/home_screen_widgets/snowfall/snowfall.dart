@@ -1,4 +1,3 @@
-import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import './widget/snow_widget.dart';
 
