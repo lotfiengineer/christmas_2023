@@ -40,8 +40,7 @@ class _ReceivedGiftContainerState extends State<ReceivedGiftContainer>
                 decoration: const BoxDecoration(
                   color: AppTheme.transparentBlueColor,
                 ),
-                child: Image.asset(
-                    'lib/assets/images/gift_images/watch.png'),
+                child: Image.asset(widget.gift.giftImageSrc),
               ),
               SizedBox(
                 width: double.infinity,

@@ -78,7 +78,7 @@ class MovingLinesPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Color.fromARGB(104, 255, 255, 255)
+      ..color = const Color.fromARGB(104, 255, 255, 255)
       ..strokeWidth = 10.0;
 
     double lineHeight = 0.5;

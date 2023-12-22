@@ -55,7 +55,7 @@ class _GivingGiftState extends State<GivingGift> {
                     height: 180,
                   ),
                   content: Text(
-                    gift.giftDescription,
+                    gift.giftTitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: context.textTheme.titleMedium!.fontSize,
