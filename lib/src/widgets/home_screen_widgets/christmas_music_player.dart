@@ -20,7 +20,7 @@ class _ChristmasMusicPlayerState extends State<ChristmasMusicPlayer> {
     super.initState();
 
     player.audioCache = AudioCache(prefix: 'lib/assets/');
-    player.setVolume(0.2);
+    player.setVolume(0.18);
     player.onPlayerStateChanged.listen((event) {
       if (event == PlayerState.completed) {
         player.stop();

@@ -8,6 +8,7 @@ abstract class AppTheme {
   static const yellowColor = Color(0xFFF1A50D);
   static const lightYelllow = Color.fromARGB(255, 247, 193, 85);
   static const blueColor = Color(0xFF2A82BD);
+  static const lightBlue = Color.fromARGB(182, 27, 128, 195);
   static const whiteColor = Colors.white;
   static const lightWhiteColor = Color.fromARGB(226, 255, 255, 255);
   static const superLightWhiteColor = Color.fromARGB(184, 255, 255, 255);
@@ -61,14 +62,6 @@ abstract class AppTheme {
         style: ButtonStyle(
         )
       ),
-
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-          // backgroundColor: Colors.red,
-          
-        )
-      ),
-
       dialogBackgroundColor: superLightGreen,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: whiteColor,

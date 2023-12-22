@@ -2,6 +2,7 @@ import 'package:christmas_2024/src/config/themes/app_theme.dart';
 import 'package:christmas_2024/src/screens/gifts_screen.dart';
 import 'package:christmas_2024/src/screens/home_screen.dart';
 import 'package:christmas_2024/src/utils/methods/is_home_visible.dart';
+import 'package:christmas_2024/src/widgets/gifts_screen_widgets/confirm_reset_dialog.dart';
 import 'package:christmas_2024/src/widgets/home_screen_widgets/christmas_music_player.dart';
 import 'package:christmas_2024/src/widgets/ui/bottom_navigation_bar_ui.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +64,19 @@ class _ScaffoldUiState extends State<ScaffoldUi> {
           leading: const Center(
             child: ChristmasMusicPlayer(),
           ),
+          actions: [
+            isHomeVisible(currentIndex)
+                ? const SizedBox()
+                : Center(
+                    child: ConfirmResetDialog(
+                      goBackHome: () {
+                        setState(() {
+                          currentIndex = 0;
+                        });
+                      },
+                    ),
+                  )
+          ],
         ),
         body: widgetOptions[currentIndex],
         bottomNavigationBar: BottomNavigationBarUi(

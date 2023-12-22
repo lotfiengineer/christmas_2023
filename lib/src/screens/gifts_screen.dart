@@ -1,5 +1,6 @@
 import 'package:christmas_2024/src/gifts_viewmodel.dart';
 import 'package:christmas_2024/src/screens/gifts_description_screen.dart';
+import 'package:christmas_2024/src/utils/extensions/build_context_extensions.dart';
 import 'package:christmas_2024/src/widgets/gifts_screen_widgets/received_gift_container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,25 +31,34 @@ class _GiftsScreenState extends State<GiftsScreen> {
       ),
     )).toList();
 
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: PageView(
-        controller: controller,
-        physics: const NeverScrollableScrollPhysics(),
-        children: [
-          GridView.count(
-            scrollDirection: Axis.vertical,
-            crossAxisCount: 3,
-            crossAxisSpacing: 28,
-            mainAxisSpacing: 28,
-            children: giftsList,
-          ),
-          GiftsDescriptionScreen(
-            movePreviousPage: movePreviousPage,
-          ),
-        ],
-      ),
-    );
+    return giftsViewmodel.receivedGifts.isEmpty
+        ? Center(
+            child: Text(
+              'You have received no gifts',
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: context.textTheme.displayMedium!.fontSize),
+            ),
+          )
+        : Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: PageView(
+              controller: controller,
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                GridView.count(
+                  scrollDirection: Axis.vertical,
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 28,
+                  mainAxisSpacing: 28,
+                  children: giftsList,
+                ),
+                GiftsDescriptionScreen(
+                  movePreviousPage: movePreviousPage,
+                ),
+              ],
+            ),
+          );
   }
 
   void moveNextPage() {

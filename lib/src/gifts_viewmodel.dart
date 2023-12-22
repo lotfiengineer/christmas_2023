@@ -61,4 +61,9 @@ class GiftsViewmodel extends ChangeNotifier {
     selectedGift = gift;
     // notifyListeners();
   }
+
+  void resetReceivedGifts() {
+    receivedGifts.clear();
+    notifyListeners();
+  }
 }
