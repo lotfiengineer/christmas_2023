@@ -20,7 +20,10 @@ class _GiftsScreenState extends State<GiftsScreen> {
 
     List<Widget> giftsList = (giftsViewmodel.receivedGifts.map(
       (gift) => GestureDetector(
-        onTap: moveNextPage,
+        onTap: () {
+          moveNextPage();
+          giftsViewmodel.setSelectedGift(gift);
+        },
         child: ReceivedGiftContainer(
           gift: gift,
         ),
@@ -28,7 +31,7 @@ class _GiftsScreenState extends State<GiftsScreen> {
     )).toList();
 
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(15.0),
       child: PageView(
         controller: controller,
         physics: const NeverScrollableScrollPhysics(),

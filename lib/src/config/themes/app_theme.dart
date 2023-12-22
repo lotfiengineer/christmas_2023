@@ -61,6 +61,14 @@ abstract class AppTheme {
         style: ButtonStyle(
         )
       ),
+
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          // backgroundColor: Colors.red,
+          
+        )
+      ),
+
       dialogBackgroundColor: superLightGreen,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: whiteColor,

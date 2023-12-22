@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class GiftsViewmodel extends ChangeNotifier {
   final List<GiftModel> receivedGifts = [];
+  late GiftModel selectedGift;
   Random random = Random();
 
   final List<GiftModel> allGifts = [
@@ -55,4 +56,9 @@ class GiftsViewmodel extends ChangeNotifier {
   }
 
   List<GiftModel> getReceivedGifts() => receivedGifts;
+
+  void setSelectedGift(GiftModel gift) {
+    selectedGift = gift;
+    // notifyListeners();
+  }
 }

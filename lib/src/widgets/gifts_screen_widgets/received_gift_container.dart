@@ -73,12 +73,12 @@ class LinePainter extends CustomPainter {
     final double offset = size.width * progress;
 
     final Paint paint = Paint()
-      ..color = Color.fromARGB(102, 15, 9, 184)
+      ..color = const Color.fromARGB(102, 15, 9, 184)
       ..strokeWidth = 3.0
       ..style = PaintingStyle.stroke;
 
     final Paint paint2 = Paint()
-      ..color = Color.fromARGB(148, 98, 0, 115)
+      ..color = const Color.fromARGB(148, 98, 0, 115)
       ..strokeWidth = 3.0
       ..style = PaintingStyle.stroke;
 
